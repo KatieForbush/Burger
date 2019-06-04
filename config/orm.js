@@ -4,7 +4,7 @@ const connection = require("./connection.js");
 // =============================================================
 
 const orm = {
-  allCharacters: function(callback) {
+  allBurgers: function(callback) {
     let s = "SELECT * FROM burgers";
 
     connection.query(s, function(err, result) {
