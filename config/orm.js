@@ -14,7 +14,7 @@ const orm = {
   },
 
   searchCharacter: function(name, callback) {
-    var s = "select * from " + burgers + " where routeName=?";
+    var s = "select * from burgers" + " where routeName=?";
 
     connection.query(s, [name], function(err, result) {
       callback(result);
