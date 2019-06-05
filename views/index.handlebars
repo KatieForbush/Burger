@@ -15,7 +15,7 @@
 
     <ul>
         {{#each burger}}
-         {{#unelss eatenBurger}}
+         {{#unless eatenBurger}}
             {{burger/burger-block eaten=true}}
          {{/unless}}
         {{/each}}   
@@ -36,5 +36,5 @@
 
         <button type="submit">Add Burger</button>
     </form>
-    
+
 
