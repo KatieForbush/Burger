@@ -1,5 +1,5 @@
 const express = require("express");
-
+const mysql = require("mysql");
 const PORT = process.env.PORT || 3306;
 
 const app = express();
@@ -20,12 +20,9 @@ app.use("/", routes);
 
 const bodyParser = require("body-parser");
 
-// const jS = require("./js/app");
 
 app.use(express)
 
-// app.use(methodOverride("_method"));
-// app.use("/", jS);
 
 app.listen(PORT, () => {
   console.log(`Server is listening on PORT ${PORT}`);

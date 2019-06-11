@@ -1,4 +1,4 @@
-const connection = require("./connection.js");
+const connection = require("../config/connection.js");
 
 // ORM
 // =============================================================
@@ -64,7 +64,7 @@ const orm = {
     queryString += cols.toString();
     queryString += ") ";
     queryString += "VALUES (";
-    queryString += allBurgers(vals.length);
+    queryString += printQuestionMarks(vals.length);
     queryString += ") ";
 
     console.log(queryString);
@@ -77,7 +77,7 @@ const orm = {
       cb(result);
     });
   },
-  update: function(table, objColVals, condition, cb) {
+  updateOne: function(table, objColVals, condition, cb) {
     var queryString = "UPDATE " + table;
 
     queryString += " SET ";
