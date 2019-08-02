@@ -1,6 +1,6 @@
 const express = require("express");
 const mysql = require("mysql");
-const PORT = process.env.PORT || 3306;
+const PORT = process.env.PORT || 3300;
 
 const app = express();
 

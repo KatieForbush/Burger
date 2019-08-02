@@ -6,7 +6,7 @@ var burger = require("/Users/kate/Desktop/Burger/models/burger.js")
 const orm = require("../config/orm.js");
 
 router.get("/", function(req, res) {
-  orm.selectAll(function(error, burgers) {
+  orm.allBurgers(function(error, burgers) {
     if (error) {
       console.log(error);
       res.status(501).json({
