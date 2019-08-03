@@ -16,7 +16,7 @@ app.set("view engine", "handlebars");
 
 const routes = require("./controllers/burgers_controller");
 
-app.use("/", routes);
+app.use(routes);
 
 const bodyParser = require("body-parser");
 

@@ -1,6 +1,6 @@
 
 //wait to attach handlers until the dom is fully loaded
-$(function(){
+$(document).ready(function(){
     $(".favorites").on("click", function(event){
         var id = $(this).data("id");
         var favBurger = $(this).data("favburger");

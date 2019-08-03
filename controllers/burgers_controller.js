@@ -6,17 +6,12 @@ var burger = require("/Users/kate/Desktop/Burger/models/burger.js")
 const orm = require("../config/orm.js");
 
 router.get("/", function(req, res) {
-  orm.allBurgers(function(error, burgers) {
-    if (error) {
-      console.log(error);
-      res.status(501).json({
-        message: `not able to query the database`
-      });
-    }
+  burger.all(function(burgerData) {
+    
 
-    console.log(`burgers: `, burgers);
+    console.log(`burgers: `, burgerData);
     //res.send("Hi there");
-    res.render("index", { burgers });
+    res.render("index", { burgers: burgerData });
   });
 });
 

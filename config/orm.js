@@ -35,12 +35,14 @@ function objToSql(ob) {
 }
 
 const orm = {
-  allBurgers: function(callback) {
-    let s = "SELECT * FROM burgers";
+  all: function(tableName, cb) {
+    let s = "SELECT * FROM " + tableName + ";";
 
     connection.query(s, function(err, result) {
-      if (err) callback(err, null);
-      callback(null, result);
+      if (err){
+        throw(err, null);
+      } 
+      cb(result);
     });
   },
 

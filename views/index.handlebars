@@ -4,20 +4,22 @@
     <h2>Favorite Burgers</h2>
 
     <ul>
-        {{#each burger}}
-         {{#unless notFavorite}}
-            {{>burger/burger-block favorite=true}}
-         {{/unless}}
+        {{#each burgers}}
+         {{#if this.is_favorite}}
+           {{ this.burger_name }}
+            {{!-- {{>burger/burger-block favorite=true}} --}}
+         {{/if}}
         {{/each}}   
     </ul>
 
     <h2>Burgers I have eaten</h2>
 
     <ul>
-        {{#each burger}}
-         {{#unless eatenBurger}}
-            {{burger/burger-block eaten=true}}
-         {{/unless}}
+        {{#each burgers}}
+         {{#if this.is_eaten}}
+            {{ this.burger_name }}
+            {{!-- {{burger/burger-block eaten=true}} --}}
+         {{/if}}
         {{/each}}   
     </ul>
 
